@@ -1,0 +1,72 @@
+.block-btn {
+  display: block;
+  width: 100%;
+  min-height: 100px;
+  color: #f2f2f2;
+  position: relative;
+  background: #00909c;
+  font-family: Gotham, Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+  overflow: hidden;
+  transition: background-color 0.5s linear;
+
+  &:hover,
+  &:focus {
+    background: #00b7c7;
+    transition: all 0.3s ease;
+
+    .text {
+      opacity: 0;
+      visibility: hidden;
+      transform: translate3D(0, 4em, 0) scale(0.25);
+    }
+
+    .icon {
+      opacity: 1;
+      visibility: visible;
+      transform: translate3D(0, 0, 0) scale(1);
+    }
+  }
+
+  .text,
+  .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .text {
+    margin: 40px auto;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition:
+      transform 0.4s cubic-bezier(0.425, -0.195, 0.005, 1.215),
+      opacity 0.13s linear;
+  }
+
+  .icon {
+    width: 50px; 
+    height: 50px; 
+    margin: 25px auto 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3D(0, -4em, 0) scale(0);
+    transition:
+      transform 0.4s cubic-bezier(0.425, -0.195, 0.005, 1.215),
+      opacity 0.4s linear;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
